@@ -76,6 +76,9 @@
              :components '("blog" "pages" "static"))))
 
 ;; Generate the site output
-(org-publish-all t)
+(org-publish-all)
+
+;; or (re-)generate everything
+; (org-publish-all t)
 
 (message "Build complete!")
