@@ -1,0 +1,6 @@
+:1313
+
+encode zstd gzip
+root * ./html
+
+file_server
