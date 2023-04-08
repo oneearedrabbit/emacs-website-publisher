@@ -10,5 +10,8 @@ serve:
 publish: build
 	rsync -av html/ root@server:/srv/http/example.com
 
+stats:
+	ssh root@server < ./scripts/stats.sh
+
 clean:
 	rm -rf html
