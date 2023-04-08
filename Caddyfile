@@ -1,6 +1,7 @@
 :1313
 
-encode zstd gzip
 root * ./html
+encode zstd gzip
+redir / /index.html
 
 file_server
