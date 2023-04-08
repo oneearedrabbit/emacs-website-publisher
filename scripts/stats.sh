@@ -7,4 +7,4 @@ do
     then
         echo "$count - $url"
     fi
-done | sort -r
+done | sort -nr
