@@ -1,4 +1,5 @@
-.PHONY: all
+.PHONY: all stats
+
 all: build
 
 build:
