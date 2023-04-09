@@ -9,7 +9,7 @@ make build    # build a website
 make serve    # caddy serves website on :1313 port
 make clean    # delete generated website
 make publish  # publish a website to remote server
-make stats    # website today's visits
+make stats    # visits
 ```
 
 ## Server
