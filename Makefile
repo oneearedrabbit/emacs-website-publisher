@@ -12,7 +12,7 @@ publish: build
 
 stats:
 	ssh root@hyper-static < ./scripts/stats.sh > ./tmp/stats.tsv && \
-	vd ./tmp/stats.tsv
-  
+	vd -p ./stats/stats_URL_freq.vdj ./tmp/stats.tsv
+
 clean:
 	rm -rf html
