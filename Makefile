@@ -11,7 +11,7 @@ publish: build
 	rsync -av html/ root@server:/srv/http/example.com
 
 stats:
-	ssh root@hyper-static < ./scripts/stats.sh > ./tmp/stats.tsv && \
+	ssh root@server < ./scripts/stats.sh > ./tmp/stats.tsv && \
 	vd -p ./stats/stats_URL_freq.vdj ./tmp/stats.tsv
 
 clean:
