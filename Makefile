@@ -14,5 +14,8 @@ stats:
 	ssh root@server < ./scripts/stats.sh > ./tmp/stats.tsv && \
 	vd -p ./stats/stats_URL_freq.vdj ./tmp/stats.tsv
 
+watch:
+	find . -path ./tmp -prune -o -path ./html -prune -o -type f -print | entr -s 'make build'
+
 clean:
 	rm -rf html
