@@ -10,6 +10,7 @@ make serve    # caddy serves website on :1313 port
 make clean    # delete generated website
 make publish  # publish a website to remote server
 make stats    # show visits, requires jq and visidata
+make watch    # watch files and automatically rebuild a website after they change
 ```
 
 ## Server
