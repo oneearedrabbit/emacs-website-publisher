@@ -1,8 +1,4 @@
-for url in $(find /srv/http/example.com/ -name '*.html' | cut -d "/" -f 5-)
-do
-    count=$(rg $url /var/log/caddy/example.com-access.log | wc -l)
-    if [ $count != "0" ]
-    then
-        echo "$count - $url"
-    fi
-done | sort -nr
+today_start=$(date +%s -d "today 00:00:00")
+today_end=$(date +%s -d "today 23:59:59")
+
+jq -rs ". | map(select(.ts > $today_start and .ts < $today_end)) | group_by(.request.uri,.status) | map({title: .[0].request.uri, count:length, status: .[0].status}) | sort_by(.count) | .[-15:] | reverse | .[] | [.count, .title, .status] | @tsv" /var/log/caddy/example.com-access.log
